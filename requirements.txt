@@ -1,0 +1,9 @@
+streamlit
+requests
+PyPDF2
+numpy
+transformers
+duckduckgo_search
+torch
+psycopg2-binary
+SQLAlchemy
