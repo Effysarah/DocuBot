@@ -5,6 +5,8 @@ DocuBot is an AI-powered assistant that integrates a knowledge base built from u
 ## Demo Video
 
 For a quick demonstration of the DocuBot in action, check out the video below:
+https://youtu.be/UdKu2ZihaDU
+Streamlit App Link: https://docubot-jnkj8akxtkwfvtr558eq5a.streamlit.app/
 
 ## Features
 
