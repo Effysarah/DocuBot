@@ -14,7 +14,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # Replace the below connection string with your actual PostgreSQL credentials
-DB_URL = "postgresql+psycopg2://postgres:5656@localhost:5432/docubot"
+DB_URL = st.secrets["postgres"]["DB_URL"]
 
 engine = create_engine(DB_URL)
 SessionLocal = sessionmaker(bind=engine)
