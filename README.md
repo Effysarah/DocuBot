@@ -28,14 +28,23 @@ Ensure you have Python 3.8 or higher installed. Then, install the required packa
 ```bash
 pip install -r requirements.txt
 ```
-Set Up PostgreSQL:
+## Set Up PostgreSQL with Supabase
+Create a Supabase Account and Project:
+Sign up at Supabase and create a new project.
 
-Install PostgreSQL and pgAdmin if you haven't already.
-Create a new database (e.g., docubot) and update the DB_URL in the code accordingly.
-Example connection string:
+Obtain Your Connection String:
+In your Supabase project dashboard, go to Settings > Database and copy the Direct Connection string.
+Modify the prefix from postgres:// to postgresql+psycopg2:// and append ?sslmode=require. For example:
 ```bash
-postgresql+psycopg2://postgres:your_password@localhost:5432/docubot
+postgresql+psycopg2://postgres:58765@db.xxxxxxxxxxxxvra.supabase.co:5432/postgres?sslmode=require
 ```
+Configure Streamlit Cloud Secrets:
+Create a .streamlit/secrets.toml file locally (or configure your Secrets in Streamlit Cloud) with the following content:
+```TOML
+[postgres]
+DB_URL = "postgresql+psycopg2://postgres:58765@db.xxxxxxxxxxxxvra.supabase.co:5432/postgres?sslmode=require"
+```
+Replace the placeholders with your actual Supabase credentials.
 Running the App
 To launch the DocuBot Streamlit app locally, run:
 ```bash
@@ -67,7 +76,8 @@ Push your repository to GitHub.
 Log in to Streamlit Cloud and connect your GitHub repository.
 Configure any necessary environment variables (such as your Hugging Face API token).
 Deploy the app.
-Contributing
+
+## Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests with improvements or bug fixes.
 
 ## License
